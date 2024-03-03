@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="en-us" />
+		<title>lwittr / profile</title>
+		<link href="/static/styles.css" media="screen, projection" rel="Stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+	</head>
+	<body class="account" id="profile">
+		<style type="text/css">
+			a {
+				color: #0000ff;
+			}
+
+			body {
+				color: #000000;
+				background-color: #9ae4e8;
+			}
+
+			#side {
+				background-color: #e0ff92;
+				border: 1px solid #87bc44;
+			}
+
+			#side .notify {
+				border: 1px solid #87bc44;
+			}
+
+			#side .actions {
+				border: 1px solid #87bc44;
+			}
+
+			h2.thumb,
+			h2.thumb a {
+				color: #000000;
+				text-decoration: none;
+			}
+			#friends a {
+				text-decoration: none;
+			}
+		</style>
+		<ul id="accessibility">
+			<li>
+				<a href="#navigation" accesskey="2">Skip to navigation</a>
+			</li>
+			<li>
+				<a href="#side">Skip to sidebar</a>
+			</li>
+		</ul>
+		<div id="container">
+			<h1>
+				<a href="/" title="lwittr: home" accesskey="1">
+					<img alt="lwittr.com" height="49" src="/static/images/lwittrlq.png" width="150" />
+				</a>
+			</h1>
+			<div id="content">
+				<div class="wrapper">
+					<h2 class="thumb">
+						<a href="#">
+                            {% if user.profile_picture %}
+                            <img alt="{{ user.screen_name }} pic" border="0" src="{{ user.profile_picture }}" valign="middle" />
+						    {% else %}
+                            <img alt="{{ user.screen_name }} pic" border="0" src="/static/images/default_profile_image_normal.gif" valign="middle" />
+                            {% endif %}
+                        </a> {{ user.screen_name }} </small>
+					</h2>
+                    {% if timeline %}
+					<div class="desc">
+						<p>
+							<a href="#" target="_blank">http://digg.com/gadgets/New...</a> haha
+						</p>
+						<p class="meta">
+							<a href="#">about 1 hour ago from web</a>
+							<span id="status_actions_5333650"></span>
+						</p>
+					</div>
+
+					<ul class="tabMenu">
+                        {% if tab_previous %}
+                            <li>
+                                <a href="/{{ user.screen_name }}/with_friends">With Friends (24h)</a>
+                            </li>
+                            <li class="active">
+                                <a href="/{{ user.screen_name }}">Previous</a>
+						    </li>
+                        {% else %}
+                            <li class="active">
+                                <a href="/{{ user.screen_name }}/with_friends">With Friends (24h)</a>
+                            </li>
+                            <li>
+                                <a href="/{{ user.screen_name }}">Previous</a>
+						    </li>
+                        {% endif %}
+						</li>
+					</ul>
+					<div class="tab">
+						<table class="doing" id="timeline" cellspacing="0">
+                            {% if timeline %}
+                                <tr class="odd" id="status_5332333">
+                                    <td class="user_actions" id="user_action_634443"></td>
+                                    <td> no school tomorrow, we're having another "cold day"! YES! <span class="meta">
+                                            <a href="#">about 4 hours ago</a> from im <span id="status_actions_5332333"></span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="even" id="status_5331933">
+                                    <td class="user_actions" id="user_action_634443"></td>
+                                    <td> school tomorrow -- to be or not to be: that is the question <span class="meta">
+                                            <a href="#">about 5 hours ago</a> from im <span id="status_actions_5331933"></span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="odd" id="status_5327565">
+                                    <td class="user_actions" id="user_action_634443"></td>
+                                    <td> enjoying my day off due to "Dangerous [low] temperatures" <span class="meta">
+                                            <a href="#">about 12 hours ago</a> from im <span id="status_actions_5327565"></span>
+                                        </span>
+                                    </td>
+                                </tr>
+                            {% endif %}
+						</table>
+{#						<span class="statuses_options">#}
+{#							<a href="#">View all&hellip;</a> | <a href="#">RSS Feed</a>#}
+{#						</span>#}
+					</div>
+
+                    {% else %}
+                <div class="desc">
+                    <p>
+                      I'm only giving updates to friends.
+                      <a href="/friendships/create/{{ user.screen_name }}">Add me.</a>
+                    </p>
+                </div>
+                {% endif %}
+                </div>
+			</div>
+			<hr />
+			<div id="side">
+				<div class="msg"> About <strong>{{ user.screen_name }}</strong>
+				</div>
+				<ul class="about">
+					<li>Name: {{ user.name }}</li>
+					<li>Bio: <olb>{{ user.bio }}</olb>
+					</li>
+					<li>Location: {{ user.location }}</li>
+					<li>Web: <a href="{{ user.website }}" rel="me">{{ user.website }}</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="/{{ user.screen_name }}/favorites">0 Favorites</a>
+					</li>
+					<li>0 Friends</li>
+					<li>0 Followers</li>
+					<li>0 Updates</li>
+				</ul>
+{#				<div id="friends">#}
+{#					<a href="#" rel="contact" title="Bryan Culver">#}
+{#						<img alt="271800317_440fc5da4d" height="24" src="/static/images/mrrobot.jpg" width="24" />#}
+{#					</a>#}
+{#					<a href="#" rel="contact" title="Judson">#}
+{#						<img alt="Picture_4" height="24" src="/static/images/mrrobot.jpg" width="24" />#}
+{#					</a>#}
+{#					<a href="#" rel="contact" title="Kevin Sylvia">#}
+{#						<img alt="1472890783_l" height="24" src="/static/images/mrrobot.jpg" width="24" />#}
+{#					</a>#}
+{#					<a href="#" rel="contact" title="Mike">#}
+{#						<img alt="Vskyeno_s" height="24" src="/static/images/mrrobot.jpg" width="24" />#}
+{#					</a>#}
+{#					<a href="#" rel="contact" title="themak">#}
+{#						<img alt="Themak" height="24" src="/static/images/mrrobot.jpg" width="24" />#}
+{#					</a>#}
+{#				</div>#}
+                {% if "id" not in session %}
+				<div class="notify"> Want an account? <br />
+					<a href="create" class="join">Join for Free!</a>
+					<br /> Have an account? <a href="login">Sign in!</a>
+				</div>
+                {% endif %}
+			</div>
+			<hr />
+			<hr />
+			<div id="footer">
+				<h3>Footer</h3>
+				<ul>
+					<li class="first">&copy; 2023 lwittr</li>
+					<li>
+						<a href="/help/aboutus">About Us</a>
+					</li>
+					<li>
+						<a href="/help/contact">Contact</a>
+					</li>
+					<li>
+						<a href="/blog">Blog</a>
+					</li>
+					<li>
+						<a href="/help/api">API</a>
+					</li>
+					<li>
+						<a href="/help">Help</a>
+					</li>
+					<li>
+						<a href="/tos">Terms of Service</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

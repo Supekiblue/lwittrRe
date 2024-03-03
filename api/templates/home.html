@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="en-us" />
+		<title>lwittr / profile</title>
+		<link href="/static/styles.css" media="screen, projection" rel="Stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+	</head>
+	<body class="account" id="profile">
+		<ul id="accessibility">
+			<li>
+				<a href="#navigation" accesskey="2">Skip to navigation</a>
+			</li>
+			<li>
+				<a href="#side">Skip to sidebar</a>
+			</li>
+		</ul>
+		<div id="container">
+
+			<h1>
+				<a href="#" title="lwittr: home" accesskey="1">
+					<img alt="lwittr.com" height="49" src="/static/images/lwittrlq.png" width="150" />
+				</a>
+			</h1>
+
+			<div id="content">
+				<div class="wrapper">
+					<div>
+						<form id="doingForm" action="" method="post">
+							<div class="bar">
+								<table style="width:100%">
+									<thead>
+									  <tr>
+										<th><h3>What are you doing?</h3></th>
+										<th style="text-align:right"><span style="font-weight: normal;">Characters avaliable: <b id="characters">140</b></span></th>
+									  </tr>
+									</thead>
+								  </table>
+
+							</div>
+							<div class="info">
+								<textarea name="content" placeholder=""></textarea>
+							</div>
+							<center>
+								<div class="submit">
+									<input type="submit" value="Update">
+								</div>
+							</center>
+
+						</form>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<div id="side">
+				<div class="msg"> Welcome, <a href="/{{ user.screen_name }}"><strong>{{ user.screen_name }}</strong></a>
+				</div>
+				<ul class="about">
+					<li><b>Currently:</b> {{ user.bio }}</li>
+
+				</ul>
+				<ul>
+					<li>
+						<a href="#">Following:</a> 0
+					</li>
+					<li>
+						<a href="#">Followers:</a> 0
+					</li>
+					<li>
+						<a href="#">Favorites:</a> 0
+					</li>
+					<li>
+						<a href="#">Direct Messages:</a> 0
+					</li>
+					<li>
+						Updates: 0
+					</li>
+				</ul>
+				<ul class="about">
+					<li>Send Notifications To:</li>
+					<li>
+						<input type="radio" id="html" name="fav_language" value="HTML">
+						<label for="html">im</label>
+						<input type="radio" id="css" name="fav_language" value="CSS" checked="checked">
+						<label for="css">web-only</label>
+					</li>
+				</ul><br>
+			</div>
+			<hr />
+			<div id="navigation">
+				<h3>Navigation</h3>
+				<ul>
+					<a href="/">Home</a>
+					<li>
+						<a href="/{{ user.screen_name }}">Your profile</a>
+					</li>
+					<li>
+						<a href="">Invite</a>
+					</li>
+					<li>
+						<a href="">Public Timeline</a>
+					</li>
+					<li>
+						<a href="">Badges</a>
+					</li>
+					<li>
+						<a href="">Settings</a>
+					</li>
+					<li>
+						<a href="/help">Help</a>
+					</li>
+					<li>
+						<a href="/sign_out">Sign out</a>
+					</li>
+
+				</ul>
+			</div>
+			<hr />
+			<div id="footer">
+				<h3>Footer</h3>
+				<ul>
+					<li class="first">&copy; lwittr</li>
+
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
