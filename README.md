@@ -1,4 +1,4 @@
-# lwittr
+# Lwittr
 Lwittr source from October 21st 2023, also known as the version before Owler. 
 
 The code is released for free use. However, there are no guarantees of the code or its quality. The project at the time was made just for study.
