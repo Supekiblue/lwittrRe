@@ -1,6 +1,7 @@
 # lwittr
+Lwittr source from October 21st 2023, also known as the version before Owler. 
 
-Very early version of Owler as we know today, from October 21st 2023. Very few stuff are working, and as this was when I was learning Flask and MongoDB, I don't recommend using this source at all. But it's there for archival purposes.
+The code is released for free use. However, there are no guarantees of the code or its quality. The project at the time was made just for study.
 
 ## Things that are working
 - Accounts
